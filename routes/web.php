@@ -20,3 +20,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::namespace('Administration')
+    ->name('administration.')
+    ->middleware('auth:administrator')
+    ->prefix('administration')
+    ->group(function () {
+
+        //
+
+});

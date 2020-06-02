@@ -16,7 +16,7 @@ class CreateInstructorsTable extends Migration
         Schema::create('instructors', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->index();
-            $table->string('job_title');
+            $table->string('job_title')->nullable();
             $table->text('about')->nullable();
             $table->boolean('active')->default(true);
             $table->string('wildcard_code')->index();

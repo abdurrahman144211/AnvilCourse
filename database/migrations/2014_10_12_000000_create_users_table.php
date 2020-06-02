@@ -19,8 +19,20 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('phone')->nullable();
+            $table->boolean('phone_verified')->default(false);
+            $table->enum('role', ['student', 'instructor', 'administrator'])->index();
+            $table->unsignedSmallInteger('city_id')->nullable();
+            $table->date('yob')->nullable();
+            $table->string('avatar_path')->nullable();
+            $table->boolean('active')->default(true);
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('city_id')
+                ->references('id')
+                ->on('cities')
+                ->onDelete('set null');
         });
     }
 

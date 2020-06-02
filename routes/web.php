@@ -26,7 +26,5 @@ Route::namespace('Administration')
     ->middleware('auth:administrator')
     ->prefix('administration')
     ->group(function () {
-
-        //
-
+        Route::get('/', function () {})->name('home');
 });

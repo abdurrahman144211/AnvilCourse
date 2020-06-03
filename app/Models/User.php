@@ -55,6 +55,14 @@ class User extends Authenticatable
     }
 
     /**
+     * @return string
+     */
+    public function formattedRole()
+    {
+        return ucfirst($this->role);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function instructorProfile()

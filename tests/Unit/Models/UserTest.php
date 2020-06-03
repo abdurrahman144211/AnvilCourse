@@ -40,4 +40,12 @@ class UserTest extends TestCase
         $this->assertInstanceOf(Instructor::class, $user->instructorProfile);
     }
 
+    /** @test */
+    public function it_returns_a_formatted_role()
+    {
+        $user = UserFactory::create();
+
+        $this->assertEquals(ucfirst($user->role), $user->formattedRole());
+    }
+
 }

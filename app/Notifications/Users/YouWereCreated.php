@@ -41,6 +41,8 @@ class YouWereCreated extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)->view("mails.{$notifiable->role}.created");
+        return (new MailMessage)->view("mails.{$notifiable->role}.created", [
+            'user' => $this->user
+        ]);
     }
 }

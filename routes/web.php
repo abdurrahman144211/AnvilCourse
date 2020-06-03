@@ -22,8 +22,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('test', function () {
-    \App\Events\Users\UserWasCreated::dispatch(\App\Models\User::first());
-//    event(new \App\Events\Users\UserWasCreated(\App\Models\User::first()));
+    event(new \App\Events\Users\UserWasCreated(\App\Models\User::first()));
+    //    \Illuminate\Support\Facades\Cache::put('app.presentation.name', 'Anvil Course');
+//    \Illuminate\Support\Facades\Cache::put('app.presentation.logo', url('img/app-logo.png'));
 });
 Route::namespace('Administration')
     ->name('administration.')

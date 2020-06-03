@@ -28,4 +28,9 @@ class UserFactory
 
         return $user;
     }
+
+    public function make($data = [])
+    {
+        return factory(User::class)->make($data);
+    }
 }

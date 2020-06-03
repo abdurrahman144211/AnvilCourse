@@ -23,10 +23,10 @@ class UserTest extends TestCase
     /** @test */
     public function it_can_check_if_user_is_an_instructor()
     {
-        $roles = ['administrator', 'student', 'instructor'];
+        $roles = ['student', 'instructor', 'administrator'];
 
-        $user1 = UserFactory::create(['role' => $roles[rand(0, 1)]]);
-        $user2 = UserFactory::create(['role' => $roles[2]]);
+        $user1 = UserFactory::create(['role' => $roles[0]]);
+        $user2 = UserFactory::create(['role' => $roles[rand(1, 2)]]);
 
         $this->assertFalse($user1->isInstructor());
         $this->assertTrue($user2->isInstructor());

@@ -21,10 +21,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('test', function () {
+    \App\Events\Users\UserWasCreated::dispatch(\App\Models\User::first());
+//    event(new \App\Events\Users\UserWasCreated(\App\Models\User::first()));
+});
 Route::namespace('Administration')
     ->name('administration.')
     ->middleware('auth:administrator')
     ->prefix('administration')
     ->group(function () {
         Route::get('/', function () {})->name('home');
+        /**
+         * Users Routes
+         */
+        Route::resource('users', 'Users\\UserController');
 });

@@ -72,7 +72,6 @@ class UserCreateTest extends TestCase
     /** @test */
     public function an_administrator_can_store_a_new_user_into_users_table()
     {
-        $this->withoutExceptionHandling();
         $response = $this->post(route('administration.users.store', $this->handleUser()));
 
         $user = User::orderBy('id', 'desc')->first();

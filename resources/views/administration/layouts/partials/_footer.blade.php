@@ -10,7 +10,7 @@
             </div>
             <div class="col-12 col-lg-auto mt-3 mt-lg-0">
                 Copyright © 2020
-                <a href="." class="link-secondary">Tabler</a>.
+                <a href="." class="link-secondary">{{ optional($appPresent)->name }}</a>.
                 All rights reserved.
             </div>
         </div>

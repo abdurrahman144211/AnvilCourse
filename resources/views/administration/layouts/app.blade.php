@@ -1,15 +1,14 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en">
     @include('administration.layouts.partials._head')
-    <body class="">
+    <body class="antialiased">
+        @include('administration.layouts.partials._sidebar')
         <div class="page">
-            <div class="flex-fill">
-                @include('administration.layouts.partials._topnav')
-                <div class="my-3 my-md-5">
-                    @yield('content')
-                </div>
+            @include('administration.layouts.partials._topnav')
+            <div class="content">
+                @yield('content')
+                @include('administration.layouts.partials._footer')
             </div>
-            @include('administration.layouts.partials._footer')
         </div>
     </body>
 </html>

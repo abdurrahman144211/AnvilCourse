@@ -17,6 +17,13 @@ abstract class TestCase extends BaseTestCase
         return $this->signIn($administrator);
     }
 
+    public function signInInstructor($instructor = null)
+    {
+        $instructor = $instructor ?: UserFactory::create(['role' => 'instructor']);
+
+        return $this->signIn($instructor);
+    }
+
     public function signIn($user = null)
     {
         $user = $user ?: UserFactory::create();

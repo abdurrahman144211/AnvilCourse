@@ -22,3 +22,16 @@ Route::group([
     });
 });
 
+
+Route::group([
+    'namespace' => 'Teaching',
+    'middleware' => 'auth:instructor',
+    'prefix' => 'teaching',
+], function () {
+    Route::name('teaching.')->group(function () {
+        Route::get('/', function () {
+            return '';
+        })->name('home');
+    });
+});
+

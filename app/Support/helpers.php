@@ -1,9 +1,13 @@
 <?php
 
-if(! function_exists('presentation')) {
-    function presentation($key)
+if(! function_exists('appPresent')) {
+    function appPresent($key = null)
     {
-        return \Illuminate\Support\Facades\Cache::get("app.presentation.{$key}");
+        $settings =  \Cache::rememberForever('app.present', function () {
+            return resolve(\App\Repositories\Contracts\AppSettingsRepositoryInterface::class)->first();
+        });
+
+        return $key ? $settings[$key] : $settings;
     }
 }
 

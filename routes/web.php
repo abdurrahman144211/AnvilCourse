@@ -31,7 +31,7 @@ Route::namespace('Administration')
     ->middleware('auth:administrator')
     ->prefix('administration')
     ->group(function () {
-        Route::get('/', function () {})->name('home');
+        Route::view('/', 'administration.home.home')->name('home');
         /**
          * Users Routes
          */

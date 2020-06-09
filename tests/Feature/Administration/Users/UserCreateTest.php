@@ -77,7 +77,7 @@ class UserCreateTest extends TestCase
 
         $user = User::orderBy('id', 'desc')->first();
 
-        $response->assertRedirect(route('administration.users.show', $user->id));
+        $response->assertRedirect(route('administration.users.edit', $user->id));
 
         $this->assertDatabaseHas('users', ['email' => $user->email]);
     }

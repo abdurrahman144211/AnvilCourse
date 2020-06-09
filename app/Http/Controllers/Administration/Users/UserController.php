@@ -39,7 +39,7 @@ class UserController extends Controller
     {
         $user = resolve(UserStoreService::class)->handle($request->validated());
 
-        return redirect(route('administration.users.show', $user->id));
+        return redirect(route('administration.users.edit', $user->id));
     }
 
     /**

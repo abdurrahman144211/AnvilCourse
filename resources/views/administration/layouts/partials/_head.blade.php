@@ -10,7 +10,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <title>{{ $appPresent->name }} | Administration | @yield('title', 'Welcome')</title>
+    <title>{{ optional($appPresent)->name }} | Administration | @yield('title', 'Welcome')</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <!-- Generated: 2019-04-04 16:55:45 +0200 -->

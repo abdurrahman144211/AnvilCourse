@@ -45,7 +45,7 @@ class AppSettings
             $this->data = $this->resolveSettings();
         }
 
-        return $view->with('appPresent', $this->data);
+        $view->with('appPresent', $this->data);
     }
 
     /**

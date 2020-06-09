@@ -11,10 +11,7 @@
                 <form action="{{ route('administration.users.store') }}" method="POST" class="card">
                     @csrf
                     <div class="card-header">
-                        <h3 class="card-title">Insert a new {{ $appPresent->name }} User</h3>
-                        <h3 class="card-title">Insert a new {{ $appPresent->name }} User</h3>
-                        <h3 class="card-title">Insert a new {{ $appPresent->name }} User</h3>
-                        <h3 class="card-title">Insert a new {{ $appPresent->name }} User</h3>
+                        <h3 class="card-title">Insert a new {{ optional($appPresent)->name }} User</h3>
                     </div>
                     <div class="card-body">
                         <div class="row">

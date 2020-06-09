@@ -19,7 +19,7 @@ class AppSettingTest extends TestCase
         $view = \Mockery::mock(View::class);
 
         $view->shouldReceive('with')
-            ->with(['appPresent' => resolve(AppSettingsRepositoryInterface::class)->first(),])
+            ->with('appPresent', resolve(AppSettingsRepositoryInterface::class)->first())
             ->once();
 
         $composer->compose($view);

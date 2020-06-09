@@ -19,7 +19,6 @@ class UserCreateTest extends TestCase
     /** @test */
     public function an_administrator_can_see_create_user_page()
     {
-        $this->withoutExceptionHandling();
         $this->get(route('administration.users.create'))
             ->assertStatus(200)
             ->assertViewIs('administration.users.create');

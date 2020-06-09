@@ -3,6 +3,7 @@
 namespace Tests\Feature\Administration;
 
 use Facades\Tests\Support\Factories\UserFactory;
+use Illuminate\View\View;
 use Tests\TestCase;
 
 class HomeTest extends TestCase

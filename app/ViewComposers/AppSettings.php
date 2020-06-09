@@ -9,13 +9,22 @@ use Illuminate\View\View;
 class AppSettings
 {
     /**
-     *
+     * App Settings cache key
      */
     protected const CACHE_KEY = 'app.present';
+
+
     /**
      * @var AppSettingsRepositoryInterface
      */
     protected $settings;
+
+
+    /**
+     * @var
+     * App settings value
+     */
+    protected $data;
 
     /**
      * AppSettings constructor.
@@ -32,9 +41,11 @@ class AppSettings
      */
     public function compose(View $view)
     {
-        return $view->with([
-            'appPresent' => $this->resolveSettings(),
-        ]);
+        if (! $this->data) {
+            $this->data = $this->resolveSettings();
+        }
+
+        return $view->with('appPresent', $this->data);
     }
 
     /**

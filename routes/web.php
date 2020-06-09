@@ -29,9 +29,8 @@ Route::group([
     'prefix' => 'teaching',
 ], function () {
     Route::name('teaching.')->group(function () {
-        Route::get('/', function () {
-            return '';
-        })->name('home');
+        Route::view('/', 'teaching.home.home')->name('home');
+        Route::resource('courses', 'Courses\CourseController');
     });
 });
 

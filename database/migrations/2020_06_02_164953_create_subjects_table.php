@@ -18,6 +18,7 @@ class CreateSubjectsTable extends Migration
             $table->string('name');
             $table->string('code')->index();
             $table->string('vector_path');
+            $table->nestedSet();
             $table->timestamps();
         });
     }
